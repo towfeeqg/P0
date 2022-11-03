@@ -18,3 +18,20 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
+uniqueNumbers = []
+
+for rows in texts:
+    sendingTextNumber = rows[0]
+    receivingTextNumber = rows[2]
+
+    if sendingTextNumber not in uniqueNumbers: uniqueNumbers.append(sendingTextNumber)
+    if receivingTextNumber not in uniqueNumbers: uniqueNumbers.append(receivingTextNumber)
+
+for rows in calls:
+    sendingCallNumber = rows[0]
+    receivingCallNumber = rows[2]
+
+    if sendingCallNumber not in uniqueNumbers: uniqueNumbers.append(sendingCallNumber)
+    if receivingCallNumber not in uniqueNumbers: uniqueNumbers.append(receivingCallNumber)
+    
+print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
