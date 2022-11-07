@@ -25,3 +25,24 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+outgoingCalls = []
+incomingCalls = []
+outgoingTexts = []
+incomingTexts = []
+
+for call in calls:
+    outgoingCalls.append(call[0])
+    incomingCalls.append(call[1])
+
+for text in texts:
+    outgoingTexts.append(text[0])
+    incomingTexts.append(text[1])
+
+telemarketers = [telemarketer for telemarketer in outgoingCalls if telemarketer not in incomingCalls]
+telemarketers = [telemarketer for telemarketer in telemarketers if telemarketer not in outgoingTexts]
+telemarketers = [telemarketer for telemarketer in telemarketers if telemarketer not in incomingTexts]
+telemarketers.sort()
+
+print("These numbers could be telemarketers: ")
+for items in set(telemarketers):
+    print(items)
