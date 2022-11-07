@@ -44,3 +44,22 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+lst = []
+
+for call in calls:
+  if call[0][0:5] == '(080)':
+    # if landline. look for () and print whatever is inside
+    # if mobile. look for space in between number and print it's first 4 digits
+    # if telemarketer (else case) or look for 140 at start
+    if call[1][0:1] == '(' and call[1].split(')')[0][1:] not in lst:
+      lst.append(call[1].split(')')[0][1:])
+    elif ' ' in call[1] and call[1][0:4] not in lst:
+      lst.append(call[1][0:4])
+    elif call[1][0:3] == '140' and '140' not in lst:
+      lst.append('140')
+
+lst.sort()
+
+print("The numbers called by people in Bangalore have codes:")
+for code in lst:
+  print(code)
