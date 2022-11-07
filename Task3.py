@@ -45,9 +45,11 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 lst = []
-
+total  = 0
+local = 0 
 for call in calls:
   if call[0][0:5] == '(080)':
+    total += 1
     # if landline. look for () and print whatever is inside
     # if mobile. look for space in between number and print it's first 4 digits
     # if telemarketer (else case) or look for 140 at start
@@ -57,9 +59,13 @@ for call in calls:
       lst.append(call[1][0:4])
     elif call[1][0:3] == '140' and '140' not in lst:
       lst.append('140')
+    elif call[1][0:5] == '(080)':
+      local += 1
 
 lst.sort()
 
 print("The numbers called by people in Bangalore have codes:")
 for code in lst:
   print(code)
+print('')
+print(f"{round(local/total*100,2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
