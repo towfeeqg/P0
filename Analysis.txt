@@ -10,8 +10,8 @@ Task2
 If statements embedded in a for loop. No embedded for loop thus O(n)
 
 Task3
-Same resaoning as Task2; O(n)
+The sort() function is used which has a worst-case performance of O(nlogn)
 
 Task4
-Same reasoning as Task1; O(n)
+Same reasoning as Task3; O(nlogn)
 

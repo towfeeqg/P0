@@ -22,14 +22,14 @@ uniqueNumbers = []
 
 for rows in texts:
     sendingTextNumber = rows[0]
-    receivingTextNumber = rows[2]
+    receivingTextNumber = rows[1]
 
     if sendingTextNumber not in uniqueNumbers: uniqueNumbers.append(sendingTextNumber)
     if receivingTextNumber not in uniqueNumbers: uniqueNumbers.append(receivingTextNumber)
 
 for rows in calls:
     sendingCallNumber = rows[0]
-    receivingCallNumber = rows[2]
+    receivingCallNumber = rows[1]
 
     if sendingCallNumber not in uniqueNumbers: uniqueNumbers.append(sendingCallNumber)
     if receivingCallNumber not in uniqueNumbers: uniqueNumbers.append(receivingCallNumber)

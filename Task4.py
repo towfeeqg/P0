@@ -41,8 +41,13 @@ for text in texts:
 telemarketers = [telemarketer for telemarketer in outgoingCalls if telemarketer not in incomingCalls]
 telemarketers = [telemarketer for telemarketer in telemarketers if telemarketer not in outgoingTexts]
 telemarketers = [telemarketer for telemarketer in telemarketers if telemarketer not in incomingTexts]
-telemarketers.sort()
 
+uniqueNumbers = []
 print("These numbers could be telemarketers: ")
-for items in set(telemarketers):
-    print(items)
+for telemarketer in set(telemarketers):
+    uniqueNumbers.append(telemarketer)
+
+uniqueNumbers.sort()
+print("These numbers could be telemarketers: ")
+for numbers in (uniqueNumbers):
+    print(numbers)
